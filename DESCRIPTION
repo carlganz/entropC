@@ -1,0 +1,14 @@
+Package: entropC
+Type: Package
+Title: Using C++/Rcpp to speed up entropy package
+Version: 0.1
+Date: 2015-09-09
+Author: Carl Ganz
+Maintainer: Carl Ganz <carlganz@ucla.edu>
+Description: Vroom vroom
+License: NA
+LazyData: TRUE
+Imports:
+    Rcpp (>= 0.12.0)
+LinkingTo:
+    Rcpp
