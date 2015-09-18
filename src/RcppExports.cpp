@@ -5,15 +5,39 @@
 
 using namespace Rcpp;
 
-// entropypluginC
-double entropypluginC(NumericVector x, String unit);
-RcppExport SEXP entropC_entropypluginC(SEXP xSEXP, SEXP unitSEXP) {
+// chi2indepC
+List chi2indepC(NumericMatrix x);
+RcppExport SEXP entropC_chi2indepC(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    __result = Rcpp::wrap(chi2indepC(x));
+    return __result;
+END_RCPP
+}
+// chi2pluginC
+double chi2pluginC(NumericVector x, NumericVector y, String unit);
+RcppExport SEXP entropC_chi2pluginC(SEXP xSEXP, SEXP ySEXP, SEXP unitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
+    __result = Rcpp::wrap(chi2pluginC(x, y, unit));
+    return __result;
+END_RCPP
+}
+// entropyChaoShenC
+double entropyChaoShenC(NumericVector x, String unit);
+RcppExport SEXP entropC_entropyChaoShenC(SEXP xSEXP, SEXP unitSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
-    __result = Rcpp::wrap(entropypluginC(x, unit));
+    __result = Rcpp::wrap(entropyChaoShenC(x, unit));
     return __result;
 END_RCPP
 }
@@ -29,15 +53,86 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
-// entropyChaoShenC
-double entropyChaoShenC(NumericVector x, String unit);
-RcppExport SEXP entropC_entropyChaoShenC(SEXP xSEXP, SEXP unitSEXP) {
+// entropypluginC
+double entropypluginC(NumericVector x, String unit);
+RcppExport SEXP entropC_entropypluginC(SEXP xSEXP, SEXP unitSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
-    __result = Rcpp::wrap(entropyChaoShenC(x, unit));
+    __result = Rcpp::wrap(entropypluginC(x, unit));
+    return __result;
+END_RCPP
+}
+// freqsshrinkC
+NumericVector freqsshrinkC(NumericVector y, double lambda);
+RcppExport SEXP entropC_freqsshrinkC(SEXP ySEXP, SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    __result = Rcpp::wrap(freqsshrinkC(y, lambda));
+    return __result;
+END_RCPP
+}
+// freqsdirichletC
+NumericVector freqsdirichletC(NumericVector x, double a);
+RcppExport SEXP entropC_freqsdirichletC(SEXP xSEXP, SEXP aSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type a(aSEXP);
+    __result = Rcpp::wrap(freqsdirichletC(x, a));
+    return __result;
+END_RCPP
+}
+// freqsempiricalC
+NumericVector freqsempiricalC(NumericVector x);
+RcppExport SEXP entropC_freqsempiricalC(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    __result = Rcpp::wrap(freqsempiricalC(x));
+    return __result;
+END_RCPP
+}
+// getlambdashrinkC
+double getlambdashrinkC(NumericVector y);
+RcppExport SEXP entropC_getlambdashrinkC(SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    __result = Rcpp::wrap(getlambdashrinkC(y));
+    return __result;
+END_RCPP
+}
+// KLpluginC
+double KLpluginC(NumericVector x, NumericVector y, String unit);
+RcppExport SEXP entropC_KLpluginC(SEXP xSEXP, SEXP ySEXP, SEXP unitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
+    __result = Rcpp::wrap(KLpluginC(x, y, unit));
+    return __result;
+END_RCPP
+}
+// mipluginC
+List mipluginC(NumericMatrix x, String unit);
+RcppExport SEXP entropC_mipluginC(SEXP xSEXP, SEXP unitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
+    __result = Rcpp::wrap(mipluginC(x, unit));
     return __result;
 END_RCPP
 }

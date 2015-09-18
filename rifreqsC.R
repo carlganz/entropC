@@ -1,0 +1,23 @@
+freqsC<-function (y, lambda.freqs, method = c("ML", "MM", "Jeffreys",
+                                      "Laplace", "SG", "minimax", "CS", "NSB", "shrink"), verbose = TRUE)
+{
+  if (method == "ML")
+    H = freqs.empiricalC(y)
+  if (method == "MM")
+    H = rep(NA, length(y))
+  if (method == "NSB")
+    H = rep(NA, length(y))
+  if (method == "CS")
+    H = rep(NA, length(y))
+  if (method == "Jeffreys")
+    H = freqs.DirichletC(y, a = 1/2)
+  if (method == "Laplace")
+    H = freqs.DirichletC(y, a = 1)
+  if (method == "SG")
+    H = freqs.DirichletC(y, a = 1/length(y))
+  if (method == "minimax")
+    H = freqs.DirichletC(y, a = sqrt(sum(y))/length(y))
+  if (method == "shrink")
+    H = freqs.shrinkC(y, lambda.freqs = lambda.freqs, verbose = verbose)
+  return(H)
+}
