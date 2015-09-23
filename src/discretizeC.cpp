@@ -32,5 +32,5 @@ return bins;
 //
 
 /*** R
-discretizeC(c(42,2,20,3,4,5,6,7,4),3)
+discretize(c(42,2,20,3,4,5,6,7,4),3)
 */
