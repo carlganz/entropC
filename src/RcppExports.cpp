@@ -29,6 +29,18 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// discretizeC
+NumericVector discretizeC(NumericVector x, int numBins);
+RcppExport SEXP entropC_discretizeC(SEXP xSEXP, SEXP numBinsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type numBins(numBinsSEXP);
+    __result = Rcpp::wrap(discretizeC(x, numBins));
+    return __result;
+END_RCPP
+}
 // entropyChaoShenC
 double entropyChaoShenC(NumericVector x, String unit);
 RcppExport SEXP entropC_entropyChaoShenC(SEXP xSEXP, SEXP unitSEXP) {
@@ -66,14 +78,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // freqsshrinkC
-NumericVector freqsshrinkC(NumericVector y, double lambda);
-RcppExport SEXP entropC_freqsshrinkC(SEXP ySEXP, SEXP lambdaSEXP) {
+NumericVector freqsshrinkC(NumericVector y_, double lambda);
+RcppExport SEXP entropC_freqsshrinkC(SEXP y_SEXP, SEXP lambdaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
-    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y_(y_SEXP);
     Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
-    __result = Rcpp::wrap(freqsshrinkC(y, lambda));
+    __result = Rcpp::wrap(freqsshrinkC(y_, lambda));
     return __result;
 END_RCPP
 }
@@ -90,13 +102,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // freqsempiricalC
-NumericVector freqsempiricalC(NumericVector x);
-RcppExport SEXP entropC_freqsempiricalC(SEXP xSEXP) {
+NumericVector freqsempiricalC(NumericVector x_);
+RcppExport SEXP entropC_freqsempiricalC(SEXP x_SEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    __result = Rcpp::wrap(freqsempiricalC(x));
+    Rcpp::traits::input_parameter< NumericVector >::type x_(x_SEXP);
+    __result = Rcpp::wrap(freqsempiricalC(x_));
     return __result;
 END_RCPP
 }

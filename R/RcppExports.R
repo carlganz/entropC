@@ -9,6 +9,10 @@ chi2pluginC <- function(x, y, unit = "log") {
     .Call('entropC_chi2pluginC', PACKAGE = 'entropC', x, y, unit)
 }
 
+discretizeC <- function(x, numBins) {
+    .Call('entropC_discretizeC', PACKAGE = 'entropC', x, numBins)
+}
+
 entropyChaoShenC <- function(x, unit = "log") {
     .Call('entropC_entropyChaoShenC', PACKAGE = 'entropC', x, unit)
 }
@@ -21,16 +25,16 @@ entropypluginC <- function(x, unit = "log") {
     .Call('entropC_entropypluginC', PACKAGE = 'entropC', x, unit)
 }
 
-freqsshrinkC <- function(y, lambda) {
-    .Call('entropC_freqsshrinkC', PACKAGE = 'entropC', y, lambda)
+freqsshrinkC <- function(y_, lambda) {
+    .Call('entropC_freqsshrinkC', PACKAGE = 'entropC', y_, lambda)
 }
 
 freqsdirichletC <- function(x, a) {
     .Call('entropC_freqsdirichletC', PACKAGE = 'entropC', x, a)
 }
 
-freqsempiricalC <- function(x) {
-    .Call('entropC_freqsempiricalC', PACKAGE = 'entropC', x)
+freqsempiricalC <- function(x_) {
+    .Call('entropC_freqsempiricalC', PACKAGE = 'entropC', x_)
 }
 
 getlambdashrinkC <- function(y) {
